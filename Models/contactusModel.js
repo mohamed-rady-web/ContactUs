@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const messageSchema = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
-    phonenumber: { type: String, required: true },
-    message: { type: String, required: true },
+    service: { type: String, required: true },
+    projectDetails: { type: String, required: true },
 });
 const messageModel = mongoose.model( 'Messages',messageSchema );
 module.exports =messageModel;
