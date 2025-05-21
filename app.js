@@ -19,7 +19,11 @@ connecttodb();
 app.listen(process.env.PORT, () => {
     console.log(`Server is Running on Your Port`);
 })
-app.use(cors());
+app.use(cors({
+  origin: '*',            
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.get("/", (req, res) => {
     res.send("App is run on all origins");})
 
